@@ -21,7 +21,7 @@
                         data.Results[i].ReviewText = "Review Text";
                     }
                     review.appendChild(reviewText);
-                    reviewText.innerHTML = data.Results[i].ReviewText;
+                    reviewText.innerHTML = data.Results[i].ReviewText.toUpperCase();
                     console.log(review);
                     document.body.appendChild(review);
                 }
