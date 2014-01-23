@@ -21,6 +21,10 @@ function JSONPHandler(data) {
         reviewDate.innerHTML= "On " + reviewDateSplit[1] + "/" + reviewDateSplit[2] + "/" + reviewDateSplit[0]
         console.log(reviewDateSplit);
         review.appendChild(reviewDate);
+        var productId = document.createElement("h5");
+        productId.className="product";
+        productId.innerHTML= data.Results[i].ProductId;
+        review.appendChild(productId);
         var reviewText = document.createElement("p");
         reviewText.className = "review-text";
         if (!data.Results[i].ReviewText) {

@@ -66,8 +66,8 @@ body {
 	position:relative;
 }
 
-.review-title, .review-date {
-	margin-bottom:10px;
+.review-title, .review-date, .product {
+	margin-bottom:5px;
 }
 
 .review-title {
