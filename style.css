@@ -79,3 +79,7 @@ header {
 	margin: 0 auto;
 	font-size:24px;
 }
+
+.reviewer-nickname {
+	margin-bottom:5px;
+}

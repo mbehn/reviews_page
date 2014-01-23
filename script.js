@@ -10,9 +10,16 @@ function JSONPHandler(data) {
         }
         reviewTitle.innerHTML = data.Results[i].Title.toUpperCase();
         review.appendChild(reviewTitle);
+        var reviewerNickname = document.createElement("h5");
+        reviewerNickname.className="reviewer-nickname";
+        reviewerNickname.innerHTML="Written by: " + data.Results[i].UserNickname;
+        review.appendChild(reviewerNickname);
         var reviewDate = document.createElement("h4");
         reviewDate.className = "review-date";
-        reviewDate.innerHTML = data.Results[i].SubmissionTime;
+        reviewDate.day = data.Results[i].SubmissionTime.split("T")[0];
+        var reviewDateSplit = reviewDate.day.split("-");
+        reviewDate.innerHTML= "On " + reviewDateSplit[1] + "-" + reviewDateSplit[2] + "-" + reviewDateSplit[0]
+        console.log(reviewDateSplit);
         review.appendChild(reviewDate);
         var reviewText = document.createElement("p");
         reviewText.className = "review-text";
@@ -20,7 +27,7 @@ function JSONPHandler(data) {
             data.Results[i].ReviewText = "Review Text";
         }
         review.appendChild(reviewText);
-        reviewText.innerHTML = data.Results[i].ReviewText.toUpperCase();
+        reviewText.innerHTML = data.Results[i].ReviewText;
         console.log(review);
         document.body.appendChild(review);
     }
