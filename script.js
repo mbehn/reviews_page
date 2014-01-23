@@ -18,7 +18,7 @@ function JSONPHandler(data) {
         reviewDate.className = "review-date";
         reviewDate.day = data.Results[i].SubmissionTime.split("T")[0];
         var reviewDateSplit = reviewDate.day.split("-");
-        reviewDate.innerHTML= "On " + reviewDateSplit[1] + "-" + reviewDateSplit[2] + "-" + reviewDateSplit[0]
+        reviewDate.innerHTML= "On " + reviewDateSplit[1] + "/" + reviewDateSplit[2] + "/" + reviewDateSplit[0]
         console.log(reviewDateSplit);
         review.appendChild(reviewDate);
         var reviewText = document.createElement("p");
