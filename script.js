@@ -25,6 +25,13 @@ function JSONPHandler(data) {
         productId.className="product";
         productId.innerHTML= data.Results[i].ProductId;
         review.appendChild(productId);
+        var reviewerAge = document.createElement("h5");
+        reviewerAge.className="reviwer-age";
+        if (!data.Results[i].ContextDataValues.Age) {
+            reviewerAge.innerHTML = "Not Available";
+        }else
+        reviewerAge.innerHTML= data.Results[i].ContextDataValues.Age.ValueLabel;
+        review.appendChild(reviewerAge);
         var reviewText = document.createElement("p");
         reviewText.className = "review-text";
         if (!data.Results[i].ReviewText) {
